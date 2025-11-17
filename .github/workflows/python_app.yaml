@@ -37,7 +37,7 @@ jobs:
     # TODO: Install uv on the runner
     - name: Install the latest version of uv
       uses: astral-sh/setup-uv@v7
-      
+
     # The next steps use *run* to execute commands on the runner
     # This is just like typing commands in the Codespace terminal
 
@@ -45,7 +45,7 @@ jobs:
     # TODO: Replace the run block, using `uv` to sync the environment
     - name: Install dependencies
       run: |
-        uv sync -y
+        uv sync
 
     # This step runs unit tests with pytest
     # TODO: Update the run block. Use: uv run -m pytest
@@ -56,12 +56,11 @@ jobs:
 
     # This step runs the linter against the codebase
     # TODO: Replace the run block to use our preferred linter
-    - name: Lint with flake8
+    - name: Lint with ruff
       run: |
-        uv run flake8 .
+        uvx ruff check .
 
     # TODO: Add steps to run formatting steps and type checking
-    - name: Format with black
+    - name: Format with ruff
       run: |
-        uv run black --check .
-    
+        uvx ruff format     
