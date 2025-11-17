@@ -35,10 +35,9 @@ jobs:
         python-version: "3.12"
 
     # TODO: Install uv on the runner
-    - name: Install uv
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@v7
-
+    - name: Install the latest version of uv
+      uses: astral-sh/setup-uv@v7
+      
     # The next steps use *run* to execute commands on the runner
     # This is just like typing commands in the Codespace terminal
 
